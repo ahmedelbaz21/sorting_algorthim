@@ -1,17 +1,22 @@
 {
-  "version": "0.2.0",
-  "configurations": [
+  "version": "2.0.0",
+  "tasks": [
     {
-      "name": "Run C++ file",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/program",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "externalConsole": true,
-      "MIMode": "lldb",
-      "preLaunchTask": "build C++ project"
+      "label": "build C++ project",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "-std=c++17",
+        "-Wall",
+        "-o",
+        "${workspaceFolder}/program",
+        "${file}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
     }
   ]
 }
